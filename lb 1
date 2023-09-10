@@ -1,1 +1,16 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    double a = 4;
+    double b = 300.1;
+    
+    double result = 7.2 * pow((a + b), ((1 + pow(cos(a), 2)) * (1 - cos(b)) + 0.711 * log(pow((a + b), 3))));
+    
+    cout << "Результат обчислення функції: " << result << endl;
+    
+    return 0;
+}
 
