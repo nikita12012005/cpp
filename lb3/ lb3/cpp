@@ -1,0 +1,78 @@
+1_exercise
+  #include <iostream>
+
+int main() {
+    int N;
+    std::cout << "Введіть трьохзначне число: ";
+    std::cin >> N;
+
+    // Перевірка на коректність введеного числа
+    if (N < 100 || N > 999) {
+        std::cout << "Введіть трьохзначне число!" << std::endl;
+        return 1;
+    }
+
+    // Розкладаємо число на цифри
+    int digit1 = N / 100;
+    int digit2 = (N / 10) % 10;
+    int digit3 = N % 10;
+
+    // Знаходимо добуток парних цифр
+    int product = 1;
+
+    if (digit1 % 2 == 0) {
+        product *= digit1;
+    }
+
+    if (digit2 % 2 == 0) {
+        product *= digit2;
+    }
+
+    if (digit3 % 2 == 0) {
+        product *= digit3;
+    }
+
+    std::cout << "Добуток парних цифр: " << product << std::endl;
+
+    return 0;
+}
+
+2_exercise
+  #include <iostream>
+#include <string>
+
+int main() {
+    int choice;
+    std::cout << "Виберіть операцію (1): ";
+    std::cin >> choice;
+
+    switch (choice) {
+        case 1:
+            // Операція 1: Ввести номер студента і вивести його номер та ініціали.
+
+            int studentNumber;
+            std::string firstName, lastName, middleName;
+
+            std::cout << "Введіть номер студента: ";
+            std::cin >> studentNumber;
+
+            std::cout << "Введіть ім'я студента: ";
+            std::cin >> firstName;
+
+            std::cout << "Введіть по батькові студента: ";
+            std::cin >> middleName;
+
+            std::cout << "Введіть прізвище студента: ";
+            std::cin >> lastName;
+
+            std::cout << "Номер студента: " << studentNumber << std::endl;
+            std::cout << "Ініціали: " << firstName[0] << "." << middleName[0] << "." << lastName[0] << "." << std::endl;
+            break;
+
+        default:
+            std::cout << "Неправильний вибір операції!" << std::endl;
+            break;
+    }
+
+    return 0;
+}
